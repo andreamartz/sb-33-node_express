@@ -11,17 +11,16 @@ function handleInput(path) {
       console.error(`Error reading ${path}: ${err}`);
       process.exit(1);
     } else {
-      lines = data.split(/\r?\n/);  // split the data string on newline characters
+      lines = data.split(/\r?\n/);        // split the data string on newline characters
       lines.forEach(line => {
         if (line !== '') {
-          out = extractStr(line);     // get hostname (which will be the output file name)
-          webCat(line, out);   // write contents of the url to text file
+          out = extractHostName(line);    // get hostname (which will be the output file name)
+          webCat(line, out);              // write contents of the url to text file
         }
       })
     }
   });
 }
-
 
 // ******************************************************
 // read page at URL
@@ -39,7 +38,7 @@ async function webCat(url, out) {
 // ******************************************************
 // helper to extract hostname (or other string) from url
 // ******************************************************
-function extractStr(url) {
+function extractHostName(url) {
 
   // calc first argument to slice
   let dblSlashIdx = url.indexOf("//")
@@ -73,5 +72,4 @@ function handleOutput(text, out) {
 };
 
 
-let file = handleInput(process.argv[2]);
-extractStr("https://nodejs.org/api/console.html");
+handleInput(process.argv[2]);
