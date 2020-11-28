@@ -20,6 +20,7 @@ A:
 - What is the difference between Node.js and Express.js?
 
 - What is the error-first callback pattern?
+A: The error-first callback pattern is a common pattern in Node libraries and other built-in tools where a callback runs after a process runs successfully or results in an error.  It gets its name because the callback takes two parameters, and the first one is the error object (or null if no error occurred), which will be supplied by Node. The second is the data that a successful process produces.
 
 - What is middleware?
 
