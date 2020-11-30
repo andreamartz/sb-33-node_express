@@ -22,7 +22,7 @@ A:
 
 - What is the difference between Node.js and Express.js?
 
-A: 
+A: Node.js is a server-side implementation of JavaScript, but it can be used for more purposes than just web development. Express is a framework for Node that is specifically for web development.
 
 - What is the error-first callback pattern?
 
@@ -38,7 +38,7 @@ A: When the `next` function is executed, it tells the server to go on to the nex
 
 - What does `RETURNING` do in SQL? When would you use it?
 
-A: 
+A: I did not see this anywhere in the curriculum to date.  Having said that, a little online research indicates that the return statement terminates a SQL procedure. After modifying a database, returning the modified value(s) is a way of retrieving them. Returning just makes the process of retrieving the values more efficient, because otherwise a SELECT statement would be needed after the process of making the change has finished.
 
 - What are some issues with the following code? (consider all aspects: performance, structure, naming, etc)
 
