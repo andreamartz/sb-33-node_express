@@ -17,7 +17,7 @@ A: a promise is a one-time guarantee of future value. A JavaScript promise is an
 
 A: 
 * An async function always returns a promise; this is not the case for regular functions, which can return anything or nothing at all.
-* The code in an async function will not run "out of order" like the code in a regular function would. This means that in an async function the execution is paused while asynchronous code is running.
+* The code in an async function will not run "out of order" like the code in a regular function could. This means that in an async function the execution is paused while asynchronous code is running, but that pause doesn't happen in regular functions.
 
 
 - What is the difference between Node.js and Express.js?
@@ -53,3 +53,10 @@ async function getUsers() {
 ```
 
 1. The requests are sent sequentially, even though they don't need to be since they are all independent of each other.  It would be more efficient to send them all off at the same time.
+
+2. The code is not DRY. It would be better to 
+  a. define an asynchronous helper function using async/await that makes the API call and uses a try/catch block for error handling.
+  b. define a const variable to hold the base url, which is `https://api.github.com/users/`
+  c. rewrite the main function to take an array of users as an argument and call the helper function for each user.
+
+4. The requests are written with jQuery, which we would be less likely to use on the server-side than the client-side (I think).
